@@ -1,0 +1,90 @@
+Turbo Assembler	 Version 2.5	    09/25/21 12:19:53	    Page 1
+lab1.asm
+
+
+
+      1	0000			     CODESG   SEGMENT PARA 'CODE'
+      2					      ASSUME CS:CODESG,DS:CODESG, SS:CODESG, ES:CODESG
+      3					      ORG    100H
+      4	0100  E9 008D		     BEGIN:   JMP    MAIN
+      5					      ;	это данные
+      6	0103  ??			      A101  db ?
+      7	0104  4F 4B 49 44 41 54	41+	      A102  db 'OKIDATA	PRINTER'
+      8	      20 50 52 49 4E 54	45+
+      9	      52
+     10	0113  D7			      A103  db	215
+     11	0114  60			      A104  db	60H
+     12	0115  E4			      A105  db	11100100B
+     13	0116  01 45 4A 48 02 4B	48+	      A106  db	01,'EJH',02,'KHL',04,'AQW'
+     14	      4C 04 41 51 57
+     15	0122  36 37 38 37 35 33		      A107  db	'678753'
+     16	0128  0A*(00)			      A108  db	10 DUP(0)
+     17	0132  FDE2			      B101  dw	0FDE2H
+     18	0134  00AF			      B102  dw	10101111B
+     19	0136  0113r			      B103  dw	A103
+     20	0138  0003 0005	0008 0009 +	      B104  dw	3,5,8,9,12
+     21	      000C
+     22	0142  05*(0000)			      B105  dw	5 DUP(0)
+     23	014C  ????????			      C101  dd	?
+     24	0150  00004F50			      C102  dd	'OP'
+     25	0154  00007B63			      C103  dd	31587
+     26	0158  0000000F			      C104  dd	A103-A102
+     27	015C  00000018 00000035		      C105  dd	24,53
+     28	0164  ????????????????		      D101  dq	?
+     29	016C  0000000000006E65		      D102  dq	06E65H
+     30	0174  0000000000007B63		      D103  dq	31587
+     31	017C  ????????????????????	      E101  dt	?
+     32	0186  0000000000000000594C	      E102  dt	'YL'
+     33	0190			     MAIN     PROC	NEAR
+     34
+     35
+     36	0190  C3			      RET
+     37	0191			     MAIN     ENDP
+     38	0191			     CODESG   ENDS
+     39					      END BEGIN
+Turbo Assembler	 Version 2.5	    09/25/21 12:19:53	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "09/25/21"
+??FILENAME			  Text	 "lab1	  "
+??TIME				  Text	 "12:19:53"
+??VERSION			  Number 0205
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODESG
+@FILENAME			  Text	 LAB1
+@WORDSIZE			  Text	 2
+A101				  Byte	 CODESG:0103
+A102				  Byte	 CODESG:0104
+A103				  Byte	 CODESG:0113
+A104				  Byte	 CODESG:0114
+A105				  Byte	 CODESG:0115
+A106				  Byte	 CODESG:0116
+A107				  Byte	 CODESG:0122
+A108				  Byte	 CODESG:0128
+B101				  Word	 CODESG:0132
+B102				  Word	 CODESG:0134
+B103				  Word	 CODESG:0136
+B104				  Word	 CODESG:0138
+B105				  Word	 CODESG:0142
+BEGIN				  Near	 CODESG:0100
+C101				  Dword	 CODESG:014C
+C102				  Dword	 CODESG:0150
+C103				  Dword	 CODESG:0154
+C104				  Dword	 CODESG:0158
+C105				  Dword	 CODESG:015C
+D101				  Qword	 CODESG:0164
+D102				  Qword	 CODESG:016C
+D103				  Qword	 CODESG:0174
+E101				  Tbyte	 CODESG:017C
+E102				  Tbyte	 CODESG:0186
+MAIN				  Near	 CODESG:0190
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODESG				  16  0191 Para	  none	  CODE
+
